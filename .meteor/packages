@@ -5,5 +5,7 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
+urigo:ionic
+pbastowski:angular2-now
+pbastowski:angular-babel
+urigo:angular
