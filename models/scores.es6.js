@@ -5,11 +5,17 @@ if (Meteor.isClient) {
     @Inject(['$meteor'])
     class ScoreService {
         constructor($meteor) {
-            this._collection = $meteor.collection(Scores).subscribe('scores');
+            this.$meteor = $meteor;
+            this._collection = this.$meteor.collection(Scores).subscribe('scores');
         }
 
         findAll() {
             return this._collection
+        }
+
+        @MeteorMethod()
+        insertScore(amount) {
+            this.$meteor.call('insertScore', amount);
         }
     }
 }

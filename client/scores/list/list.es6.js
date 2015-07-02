@@ -1,5 +1,5 @@
 @State({name: 'scoresList', url: '/', defaultRoute: true, html5Mode: true})
-@Component('home')
+@Component('listScores')
 @View({templateUrl: 'client/scores/list/list.ng.html'})
 @Inject(['$meteor', 'ScoreService'])
 class ScoresListCtrl {
