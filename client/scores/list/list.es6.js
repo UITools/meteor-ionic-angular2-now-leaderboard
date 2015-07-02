@@ -1,5 +1,9 @@
-@State({name: 'scoresList', url: '/', defaultRoute: true})
+@State({name: 'scoresList', url: '/', defaultRoute: true, html5Mode: true})
 @Component('home')
 @View({templateUrl: 'client/scores/list/list.ng.html'})
-class ScoresListCtrl {}
-
+@Inject(['$meteor', 'ScoreService'])
+class ScoresListCtrl {
+    constructor($meteor, ScoreService) {
+        this.scores = ScoreService.findAll();
+    }
+}

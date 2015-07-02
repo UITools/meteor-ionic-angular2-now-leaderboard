@@ -1,1 +1,5 @@
-list
+<ul>
+    <li ng-repeat="score in ctrl.scores | orderBy:'-amount'">
+        {{score.amount}}
+    </li>
+</ul>
